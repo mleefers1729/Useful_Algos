@@ -1,0 +1,26 @@
+The snowflake search problem:
+
+We are given a collection of snowflakes and we have to determine if any of the snowflakes in the collection are identical. A snowflake is represented by six integers,
+where each integer give the length of the snowflake's arms.
+EXAMPLE:
+3, 9, 15, 2, 1, 10
+Snowflakes can have repeat integers
+4, 8, 7, 8, 4, 2
+
+Definitions of Identical:
+1, 2, 3, 4, 5, 6
+and
+1, 2, 3, 4, 5, 6
+This one is clear why they are identical
+
+1, 2, 3, 4, 5, 6
+and 
+4, 5, 6, 1, 2, 3
+These are identical because by starting at the 1 in the second snowflake, we can get the exact same sequence of integers as in the first snowflake by wrapping
+around back to the beginning after we get to the end on the second snowflake.
+
+1, 2, 3, 4, 5, 6
+and
+3, 2, 1, 4, 5, 6
+These are identical for the same reason as the last example except for we are moving from right to left on the second snowflake this time. By starting at the 1 on the
+second snowflake and moving left, we can wrap around at the very left end back to the right and get the exact same sequence of intergers as in the first snowflake.
