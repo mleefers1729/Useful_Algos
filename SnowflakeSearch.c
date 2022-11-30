@@ -5,6 +5,7 @@ For an input of 100,000 snowflakes, this program should take < 2seconds to compl
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Testing.c"
 #define MAX_LINE_LENGTH 1000
 #define SIZE 100000
 
@@ -20,7 +21,7 @@ int code(int flake[])
 	return (flake[0] + flake[1] + flake[2] + flake[3] + flake[4] + flake[5]) % SIZE;
 }
 
-//checking for right to left match
+//checking for left to right match
 int moving_right(int sf1[], int sf2[], int start)
 {
 	for (int i = 0; i < 6; ++i)
@@ -31,7 +32,7 @@ int moving_right(int sf1[], int sf2[], int start)
 	return 1;
 }
 
-//checking for left to right match
+//checking for right to left match
 int moving_left(int sf1[], int sf2[], int start)
 {
 	for (int i = 0; i < 6; ++i)
@@ -99,6 +100,7 @@ int main(void)
 	printf("%c", 10);
 	printf("----------Snowflake Search Algo-----------%c", 10);
 	printf("%c", 10);
+	testFunc();
 
 	//Defining variables
 	FILE* textfile;
