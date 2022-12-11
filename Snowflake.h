@@ -63,7 +63,8 @@ extern int are_identical(int sf1[], int sf2[])
 	return 0;
 }
 
-//The function that will return the result and call all other functions needed to find the identical snowflakes. We are initializing and using the linked
+//The function that will return the result and call all other fun 
+//Actions needed to find the identical snowflakes. We are initializing and using the linked
 //list nodes with the 'are_identical' funtion defined above.
 extern void find_identical(flake_node* flakes[])
 {
@@ -90,3 +91,49 @@ extern void find_identical(flake_node* flakes[])
 	printf("No Alike Flakes Found");
 	return;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

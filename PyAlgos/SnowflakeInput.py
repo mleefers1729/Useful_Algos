@@ -23,6 +23,7 @@ def createInput(rods,numFlakes,outPutFile):
 			f.write(line)
 			f.write('\n')
 	f.close()
+    
 
 def code(flake,size):
 	return sum(flake)%size
@@ -49,5 +50,13 @@ def areIdentical(flake_1,flake_2):
 		if move_left(flake_1,flake_2,i):
 			return 1
 		return 0
+
+def findIdentical(flakes):
+    for i in range(len(flakes)-1):
+        if areIdentical(flakes[i],flakes[i+1]):
+            print("Twin Snowflakes Found!")
+            return None
+    print("No Alike Snowflakes Found!")
+    return None
 
 
