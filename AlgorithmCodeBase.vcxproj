@@ -75,7 +75,9 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="SnowflakeSearch.c" />
+    <ClCompile Include="Main.c" />
+    <ClCompile Include="CompoundWords.h" />
+    <ClCompile Include="Snowflake.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

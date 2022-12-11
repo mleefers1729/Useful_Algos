@@ -6,6 +6,7 @@
 
 //We are reading the input from a text file in this function. Any kind of input could be used but I found it quick to use Python to create a bunch of lists of 
 //random integers and output a text file. Python code for that can be found in the repo and is called "SnowflakeInput.py".
+//This will be called when the user chooses 'S' for an option.
 int SnowflakeFind()
 {
 	//Defining variables
@@ -17,7 +18,7 @@ int SnowflakeFind()
 	int flakeCode;
 
 	//opening the text file and looping through each line using fgets to get the list of integers.
-	textfile = fopen("SnowflakeInput.txt", "r");
+	textfile = fopen("SnowflakeInput.txt", "r"); 
 
 	//This loops through each line of the file
 	while (fgets(line, MAX_LINE_LENGTH, textfile))
@@ -56,12 +57,15 @@ int SnowflakeFind()
 	return 0;
 }
 
+
+//The Main function of the Program. Get the user's input then call the correct funtion. Ats it.
 int main(void) {
 	//Starting by printing a little bit of a heading to make the output look nicer. It matters okay??
 	printf("%c", 10);
 	printf("----------Its the Super Fun Algo Runner - Test me, I dare you.-----------%c", 10);
 	printf("%c", 10);
 	char sel[5];
+	
 	printf("Choose a function you would like to run. Type the letter of one of the following to run it:\n");
 	while (! strcmp(sel, "xx") == 0){
 		//All the function calls will go here based on user input of what to run.
@@ -76,11 +80,9 @@ int main(void) {
 			printf("Compound\n");
 			//CompoundWordFind();
 		}
-
 		printf("\n");
 		printf("Function Results listed above. Thank you come again.\n");
 	}
-
 	printf("See ya later nerd\n");
 	return 0;
 }
