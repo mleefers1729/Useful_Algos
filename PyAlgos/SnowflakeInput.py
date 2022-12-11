@@ -2,6 +2,7 @@
 This is used to generate random snowflakes for the snowflake search algo in the repo. It outputs a text file with one snowflake per line of the file.
 You will need to update the code for the algo to match your filepath here as well. This should take less than 1 sec to generate a 100,000 line file.
 '''
+# SnowflakeInput.py
 
 def createInput(rods,numFlakes,outPutFile):
 	import random
@@ -22,7 +23,7 @@ def createInput(rods,numFlakes,outPutFile):
 					line = line + str(val)
 			f.write(line)
 			f.write('\n')
-	f.close()
+	return flakes,f.close()
     
 
 def code(flake,size):
@@ -52,10 +53,12 @@ def areIdentical(flake_1,flake_2):
 		return 0
 
 def findIdentical(flakes):
-    for i in range(len(flakes)-1):
-        if areIdentical(flakes[i],flakes[i+1]):
-            print("Twin Snowflakes Found!")
-            return None
+    for i in range(len(flakes)):
+        if len(flakes[i])>1:
+            for y in range(len(flakes[i])-1):
+                if areIdentical(flakes[i][y],flakes[i][y+1]):
+                    print("Twin Snowflakes Found!")
+                    return None
     print("No Alike Snowflakes Found!")
     return None
 
