@@ -1,9 +1,0 @@
-﻿  Validating sources
-  Copying sources remotely to 'rae-ops.comp.roesleinae.com'
-  Validating architecture
-  Validating architecture
-  Starting remote build
-  Compiling sources:
-  Main.c
-  Linking objects
-  AlgorithmCodeBase.vcxproj -> C:\Users\mitchell leefers\Documents\MyFiles\AlgosGit\Useful_Algos_In_C\bin\x64\Debug\AlgorithmCodeBase.out
