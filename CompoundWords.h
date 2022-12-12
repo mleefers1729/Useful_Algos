@@ -18,33 +18,30 @@ unsigned long oaat(char* key, unsigned long len, unsigned long bits) {
 	return hash & hashmask(bits);
 }
 
-extern char *readLine(int size) {
-	char *str;
+char* readLine(int size) {
+	char* myStr;
 	int ch;
 	int len = 0;
-	str = malloc(size);
-	if (str == NULL) {
+	myStr = malloc(size);
+	if (myStr == NULL) {
 		fprintf(stderr, "malloc error\n");
 		exit(1);
 	}
 	while ((ch = getchar()) != EOF && (ch != '\n')) {
-		str[len++] = ch;
+		myStr[len++] = ch;
 		if (len == size) {
 			size = size * 2;
-			str = realloc(str, size);
-			if(str == NULL) {
+			myStr = realloc(myStr, size);
+			if (myStr == NULL) {
 				fprintf(stderr, "realloc error\n");
 				exit(1);
 			}
 		}
 	}
-	str[len] = '\0';
-	return str;
+	myStr[len] = '\0';
+	return myStr;
 }
 
-extern int CompoundWordFind(void){
-	printf("Compund Words Ran");
-return 0; }
 
 typedef struct word_node {
 	char** word;
@@ -55,4 +52,11 @@ int inHashTable(word_node* hash_table[], char* find, unsigned find_len) {
 	unsigned word_code;
 	word_node* wordPtr;
 	word_code = oaat(find, find_len, NUM_BITS);
+	wordPtr = hash_table[word_code];
+	while (wordPtr) {
+		if ((strlen(*(wordPtr->word)) == find_len) && (strncmp(*(wordPtr->word), find, find_len) == 0)) {
+			return 1;
+		}
+	}
+	return 0;
 }
