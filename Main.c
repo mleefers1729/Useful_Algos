@@ -57,6 +57,10 @@ int SnowflakeFind()
 	return 0;
 }
 
+int CompoundWordFind() {
+	return 0;
+}
+
 
 //The Main function of the Program. Get the user's input then call the correct funtion. Ats it.
 int main(void) {
@@ -69,19 +73,22 @@ int main(void) {
 	printf("Choose a function you would like to run. Type the letter of one of the following to run it:\n");
 	while (! strcmp(sel, "xx") == 0){
 		//All the function calls will go here based on user input of what to run.
-		printf("\nSnowflake(S), Compoint Word(C)\n");
+		printf("\nSnowflake(s), Compoint Word(c)\n");
 		scanf("%[^\n]%*c", sel);
 
 		if (strcmp(sel,"s") == 0) {
-			printf("Snowflake\n");
-			//SnowflakeFind();
+			printf("Snowflake Match it is...\n");
+			SnowflakeFind();
 		}
 		else if (strcmp(sel, "c") == 0) {
 			printf("Compound\n");
-			//CompoundWordFind();
+			CompoundWordFind();
 		}
-		printf("\n");
-		printf("Function Results listed above. Thank you come again.\n");
+		if (strcmp(sel, "xx") != 0) {
+			printf("\n");
+			printf("\nFunction Results listed above. Thank you come again.\n");
+		}
+
 	}
 	printf("See ya later nerd\n");
 	return 0;
